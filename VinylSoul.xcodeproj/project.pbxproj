@@ -14,12 +14,14 @@
 		2F77EFCDDDF968025A56A7AD /* InspirationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DB8600376874A4544B75F /* InspirationView.swift */; };
 		31779E05A96A672874C13E33 /* HistoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F02731D1F34FC910C7D429 /* HistoryCard.swift */; };
 		3FCFFDA8D97D143B3FA93346 /* DeepSeekServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129CCFE231F13F124001470 /* DeepSeekServiceTests.swift */; };
+		4594F03C68C6C3158D9DD84C /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD0FF27F28DA028162384D9 /* ShareSheet.swift */; };
 		4C90DF9F5E248B4A64FE551C /* MoodSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA340B6C3E8A15FB44B586DB /* MoodSlider.swift */; };
 		5A09926C8D5224CAA3692B43 /* PlaybackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35680678AC0A6120CDD73530 /* PlaybackViewModel.swift */; };
 		663F761E2819A6DBCD1EB4B5 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF471728304623EE9F817487 /* Color+Hex.swift */; };
 		67B8389EBE8B8FA467253F43 /* StyleTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC7EBF66F27ED26BF1ABBC6 /* StyleTag.swift */; };
 		71387A44D0AFE52B37FF978A /* InspirationRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D64D7821A40ECAA874DB48 /* InspirationRecord.swift */; };
 		748378E81174A892DC0A82A6 /* InspirationViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6850E2BAD22858BFC95856 /* InspirationViewTests.swift */; };
+		7BEA3717A8D0820A35445E1D /* ShareCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF3657FF5F63E33A54ED699 /* ShareCardView.swift */; };
 		9708E26D873193B50F072657 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9105D31959A7995282EAB6C /* HistoryView.swift */; };
 		9993397E6C5D1C671E0E124A /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1C6E5BFE9A3897C84FA7B9 /* NotificationManager.swift */; };
 		9FD284B5BAD095BD17DE1B09 /* GenerationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93C992B1DFFD4910803EA46 /* GenerationResult.swift */; };
@@ -68,13 +70,15 @@
 		35680678AC0A6120CDD73530 /* PlaybackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackViewModel.swift; sourceTree = "<group>"; };
 		35F0ADD81B338BAEA10D7444 /* InspirationRecordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationRecordTests.swift; sourceTree = "<group>"; };
 		3898844F55EB2B051F05CCD7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3FD0FF27F28DA028162384D9 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
 		60F02731D1F34FC910C7D429 /* HistoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCard.swift; sourceTree = "<group>"; };
+		8EF3657FF5F63E33A54ED699 /* ShareCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCardView.swift; sourceTree = "<group>"; };
 		8F6850E2BAD22858BFC95856 /* InspirationViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationViewTests.swift; sourceTree = "<group>"; };
-		9817EDD29CB14F821E2165A2 /* VinylSoulTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VinylSoulTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9817EDD29CB14F821E2165A2 /* VinylSoulTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = VinylSoulTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		997BF836D17C7F7D70456247 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		9A1C6E5BFE9A3897C84FA7B9 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
-		9D0E8986DC8BABB01AC095A1 /* VinylSoul.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VinylSoul.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A03C2F27F368B1451F71B4F5 /* VinylSoulUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VinylSoulUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D0E8986DC8BABB01AC095A1 /* VinylSoul.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = VinylSoul.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A03C2F27F368B1451F71B4F5 /* VinylSoulUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = VinylSoulUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A74D1EAB24BB9C12D97D83AD /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		A93C992B1DFFD4910803EA46 /* GenerationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationResult.swift; sourceTree = "<group>"; };
 		AD9E0C5993ADDC32431A101D /* StyleTagChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleTagChip.swift; sourceTree = "<group>"; };
@@ -239,6 +243,8 @@
 			children = (
 				60F02731D1F34FC910C7D429 /* HistoryCard.swift */,
 				CA340B6C3E8A15FB44B586DB /* MoodSlider.swift */,
+				8EF3657FF5F63E33A54ED699 /* ShareCardView.swift */,
+				3FD0FF27F28DA028162384D9 /* ShareSheet.swift */,
 				2BD73EB0ED2F62AEE8DC38BA /* SpinningVinyl.swift */,
 				AD9E0C5993ADDC32431A101D /* StyleTagChip.swift */,
 				127C5ECAFA1C0CE5DBCCFFDD /* TypewriterText.swift */,
@@ -309,7 +315,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 2640;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					D8006AF44F2F4CBB249FF4D8 = {
 						TestTargetID = 68B4634661824F0A4745EF0B;
@@ -369,6 +375,8 @@
 				0AD2D9740E562A5E2456CE64 /* PlaybackView.swift in Sources */,
 				5A09926C8D5224CAA3692B43 /* PlaybackViewModel.swift in Sources */,
 				E05D0C8D87CF701B68EDBD14 /* SettingsView.swift in Sources */,
+				7BEA3717A8D0820A35445E1D /* ShareCardView.swift in Sources */,
+				4594F03C68C6C3158D9DD84C /* ShareSheet.swift in Sources */,
 				CF50DACAEB8D32B3897BFF51 /* SongRecommendation.swift in Sources */,
 				FE2FBF0CED15F55C62877FD6 /* SpinningVinyl.swift in Sources */,
 				67B8389EBE8B8FA467253F43 /* StyleTag.swift in Sources */,
@@ -418,7 +426,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vinylsoul.app;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				UIBackgroundModes = audio;
+				UIBackgroundModes = (
+					audio,
+				);
 			};
 			name = Release;
 		};
@@ -459,7 +469,6 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -480,7 +489,6 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 6.0;
@@ -524,7 +532,6 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -538,7 +545,6 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 6.0;
@@ -609,7 +615,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vinylsoul.app;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				UIBackgroundModes = audio;
+				UIBackgroundModes = (
+					audio,
+				);
 			};
 			name = Debug;
 		};

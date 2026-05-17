@@ -61,6 +61,8 @@ struct HistoryView: View {
 struct PastPlaybackView: View {
     let record: InspirationRecord
     @Environment(AudioManager.self) private var audioManager
+    @State private var shareImage: UIImage?
+    @State private var showShareSheet = false
 
     var body: some View {
         ScrollView {
@@ -118,6 +120,27 @@ struct PastPlaybackView: View {
         }
         .navigationTitle(record.albumTitle)
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    shareImage = ShareCardRenderer.render(
+                        albumTitle: record.albumTitle,
+                        lyrics: record.lyrics,
+                        mood: record.moodRaw,
+                        style: record.styleTagRaw
+                    )
+                    showShareSheet = true
+                } label: {
+                    Image(systemName: "square.and.arrow.up")
+                        .foregroundStyle(Color(hex: "#E8A850"))
+                }
+            }
+        }
+        .sheet(isPresented: $showShareSheet) {
+            if let shareImage {
+                ShareSheet(items: [shareImage])
+            }
+        }
         .onAppear {
             audioManager.playLoFi()
         }

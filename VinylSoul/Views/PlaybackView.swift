@@ -4,6 +4,8 @@ struct PlaybackView: View {
     @Environment(AppStore.self) private var appStore
     @Environment(AudioManager.self) private var audioManager
     @State private var viewModel = PlaybackViewModel()
+    @State private var shareImage: UIImage?
+    @State private var showShareSheet = false
 
     var body: some View {
         Group {
@@ -62,8 +64,29 @@ struct PlaybackView: View {
                                 }
                                 .foregroundStyle(.secondary)
                             }
+
+                            Button(action: {
+                                shareImage = ShareCardRenderer.render(
+                                    albumTitle: result.albumTitle,
+                                    lyrics: viewModel.displayedText
+                                )
+                                showShareSheet = true
+                            }) {
+                                VStack(spacing: 4) {
+                                    Image(systemName: "square.and.arrow.up")
+                                        .font(.title2)
+                                    Text("分享")
+                                        .font(.caption)
+                                }
+                                .foregroundStyle(Color(hex: "#E8A850"))
+                            }
                         }
                         .padding(.bottom, 24)
+                    }
+                }
+                .sheet(isPresented: $showShareSheet) {
+                    if let shareImage {
+                        ShareSheet(items: [shareImage])
                     }
                 }
             } else {
