@@ -26,8 +26,3 @@ struct ContentView: View {
         .tint(Color(hex: "#E8A850"))
     }
 }
-
-// Placeholder stubs — replaced by real views in later tasks
-struct InspirationView: View { var body: some View { Text("创作") } }
-struct PlaybackView: View { var body: some View { Text("正在播放") } }
-struct HistoryView: View { var body: some View { Text("唱片架") } }
