@@ -1,0 +1,48 @@
+name: VinylSoul
+options:
+  bundleIdPrefix: com.vinylsoul
+  deploymentTarget:
+    iOS: "18.0"
+  xcodeVersion: "16.0"
+  generateEmptyDirectories: false
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+
+targets:
+  VinylSoul:
+    type: application
+    platform: iOS
+    sources:
+      - path: VinylSoul
+    info:
+      path: VinylSoul/Info.plist
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.vinylsoul.app
+        UIBackgroundModes: ["audio"]
+
+  VinylSoulTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: VinylSoulTests
+    dependencies:
+      - target: VinylSoul
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.vinylsoul.tests
+        GENERATE_INFOPLIST_FILE: "YES"
+
+  VinylSoulUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: VinylSoulUITests
+    dependencies:
+      - target: VinylSoul
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.vinylsoul.uitests
+        GENERATE_INFOPLIST_FILE: "YES"

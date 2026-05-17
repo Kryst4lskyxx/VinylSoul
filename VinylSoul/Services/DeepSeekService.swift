@@ -11,7 +11,7 @@ enum DeepSeekError: Error, Equatable {
         case (.missingAPIKey, .missingAPIKey): return true
         case (.parseError, .parseError): return true
         case (.httpError(let a), .httpError(let b)): return a == b
-        case (.networkError): return false
+        case (.networkError, .networkError): return false
         default: return false
         }
     }
@@ -85,11 +85,11 @@ actor DeepSeekService {
         return try parseResponseContent(content)
     }
 
-    func buildUserMessage(mood: Mood, keywords: String, style: StyleTag) -> String {
+    nonisolated func buildUserMessage(mood: Mood, keywords: String, style: StyleTag) -> String {
         "心情：\(mood.rawValue)。关键词：\(keywords)。风格：\(style.rawValue)。"
     }
 
-    func parseResponseContent(_ content: String) throws -> GenerationResult {
+    nonisolated func parseResponseContent(_ content: String) throws -> GenerationResult {
         var jsonString = content.trimmingCharacters(in: .whitespacesAndNewlines)
 
         if jsonString.hasPrefix("```json") {
