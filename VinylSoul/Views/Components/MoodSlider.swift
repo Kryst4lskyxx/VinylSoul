@@ -11,30 +11,31 @@ struct MoodSlider: View {
     ]
 
     var body: some View {
-        VStack(spacing: 12) {
+        VStack(spacing: 10) {
             Text("今天的心情")
-                .font(.headline)
+                .font(.subheadline.weight(.medium))
                 .foregroundStyle(.secondary)
 
             HStack(spacing: 0) {
                 ForEach(moods, id: \.self) { m in
-                    VStack(spacing: 8) {
-                        Text(emojis[m] ?? "")
-                            .font(.largeTitle)
-                            .opacity(mood == m ? 1 : 0.3)
-                            .scaleEffect(mood == m ? 1.2 : 1.0)
-                            .animation(.spring(response: 0.3), value: mood)
-
-                        Text(m.rawValue)
-                            .font(.caption)
-                            .foregroundStyle(mood == m ? .primary : .secondary)
-                    }
-                    .frame(maxWidth: .infinity)
-                    .contentShape(Rectangle())
-                    .onTapGesture {
+                    Button {
                         UIImpactFeedbackGenerator(style: .rigid).impactOccurred()
                         mood = m
+                    } label: {
+                        VStack(spacing: 6) {
+                            Text(emojis[m] ?? "")
+                                .font(.largeTitle)
+                                .opacity(mood == m ? 1 : 0.3)
+                                .scaleEffect(mood == m ? 1.2 : 1.0)
+
+                            Text(m.rawValue)
+                                .font(.caption)
+                                .foregroundStyle(mood == m ? .primary : .secondary)
+                        }
+                        .frame(maxWidth: .infinity)
                     }
+                    .buttonStyle(.plain)
+                    .animation(.spring(response: 0.3), value: mood)
                 }
             }
             .padding(.horizontal)

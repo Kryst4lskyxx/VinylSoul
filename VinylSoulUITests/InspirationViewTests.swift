@@ -10,8 +10,10 @@ final class InspirationViewTests: XCTestCase {
     }
 
     func testMoodSelection() throws {
-        let romanticButton = app.staticTexts["浪漫"]
-        XCTAssertTrue(romanticButton.exists)
+        let romanticButton = app.buttons.element(
+            matching: NSPredicate(format: "label CONTAINS %@", "浪漫")
+        )
+        XCTAssertTrue(romanticButton.waitForExistence(timeout: 3))
         romanticButton.tap()
     }
 
@@ -25,7 +27,6 @@ final class InspirationViewTests: XCTestCase {
     func testGenerateButtonDisabledWhenEmpty() throws {
         let button = app.buttons["生成灵感"]
         XCTAssertTrue(button.exists)
-        // Button should be disabled with empty keywords
         XCTAssertFalse(button.isEnabled)
     }
 
@@ -37,6 +38,9 @@ final class InspirationViewTests: XCTestCase {
         XCTAssertTrue(app.staticTexts["VinylSoul"].exists)
 
         app.tabBars.buttons["正在播放"].tap()
-        XCTAssertTrue(app.staticTexts["还没有灵感"].exists)
+        let emptyText = app.staticTexts.element(
+            matching: NSPredicate(format: "label CONTAINS %@", "还没有灵感")
+        )
+        XCTAssertTrue(emptyText.waitForExistence(timeout: 3))
     }
 }

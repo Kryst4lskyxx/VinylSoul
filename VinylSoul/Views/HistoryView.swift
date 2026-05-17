@@ -16,7 +16,10 @@ struct HistoryView: View {
                         Text("还没有灵感唱片，去创作一张吧 🎵")
                             .font(.body)
                             .foregroundStyle(.secondary)
+                            .multilineTextAlignment(.center)
+                            .padding(.horizontal)
                     }
+                    .frame(maxHeight: .infinity)
                 } else {
                     List {
                         ForEach(viewModel.records) { record in
@@ -27,6 +30,7 @@ struct HistoryView: View {
                             }
                             .listRowSeparator(.hidden)
                             .listRowBackground(Color.clear)
+                            .listRowInsets(EdgeInsets(top: 6, leading: 16, bottom: 6, trailing: 16))
                             .contextMenu {
                                 Button(role: .destructive) {
                                     viewModel.delete(record, modelContext: modelContext)
@@ -42,9 +46,11 @@ struct HistoryView: View {
                         }
                     }
                     .listStyle(.plain)
+                    .scrollContentBackground(.hidden)
                 }
             }
             .navigationTitle("唱片架")
+            .navigationBarTitleDisplayMode(.large)
             .onAppear {
                 viewModel.fetch(modelContext: modelContext)
             }
@@ -58,20 +64,22 @@ struct PastPlaybackView: View {
 
     var body: some View {
         ScrollView {
-            VStack(spacing: 24) {
+            VStack(spacing: 20) {
                 SpinningVinyl()
-                    .padding(.top, 40)
+                    .padding(.top, 32)
 
                 Text(record.albumTitle)
                     .font(.title2.weight(.medium))
                     .foregroundStyle(Color(hex: "#E8A850"))
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal)
 
                 Text(record.lyrics)
                     .font(.system(.body, design: .serif))
                     .foregroundStyle(.primary)
                     .multilineTextAlignment(.leading)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding()
+                    .padding(.horizontal)
 
                 Button(action: {
                     audioManager.speakDJ(record.djScript)
@@ -85,7 +93,7 @@ struct PastPlaybackView: View {
                     .foregroundStyle(Color(hex: "#E8A850"))
                 }
 
-                VStack(alignment: .leading, spacing: 4) {
+                VStack(alignment: .leading, spacing: 6) {
                     Text("推荐歌曲")
                         .font(.headline)
                         .foregroundStyle(.secondary)
@@ -103,7 +111,9 @@ struct PastPlaybackView: View {
                         }
                     }
                 }
-                .padding()
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.horizontal)
+                .padding(.bottom, 32)
             }
         }
         .navigationTitle(record.albumTitle)
