@@ -17,6 +17,10 @@
 - **AI 创作** — DeepSeek API 生成原创歌词、虚拟专辑名、电台 DJ 独白、真实歌曲推荐
 - **沉浸播放** — 旋转黑胶唱片动画、打字机逐字歌词、lo-fi 背景音乐、TTS 朗读电台独白
 - **灵感唱片架** — SwiftData 持久化保存每次创作，随时回看或删除
+- **🆕 触感反馈** — 生成时模拟唱片机启动震动，交互全程伴随细腻触感
+- **🆕 每日灵感推送** — 每晚 8 点本地通知提醒「今天的 R&B 心情是什么？」，已打开则自动跳过
+- **🆕 分享卡片** — 歌词+黑胶封面合成 1:1 图片，一键分享到 Instagram / 微信
+- **🆕 MusicKit 集成** — Apple Music 曲库搜索，显示专辑封面，支持 30 秒预览播放
 
 ---
 
@@ -24,6 +28,10 @@
 - **AI Generation** — DeepSeek API generates original lyrics, album title, DJ monologue, and real song recs
 - **Immersive Playback** — Spinning vinyl animation, typewriter lyrics reveal, lo-fi beat, TTS DJ voice
 - **Inspiration Shelf** — SwiftData-persisted history, tap to revisit, long-press to delete
+- **🆕 Haptic Feedback** — Vinyl-startup haptics on generate, subtle feedback at every interaction point
+- **🆕 Daily Inspiration Push** — 8 PM local notification reminder, smart skip if app already opened today
+- **🆕 Share Card** — Composite album art + lyrics into 1:1 image, share via Instagram / WeChat / system sheet
+- **🆕 MusicKit Integration** — Apple Music catalog search, album art display, 30s preview playback
 
 ---
 
@@ -101,8 +109,11 @@ GenerationResult ──▶ AppStore ──▶ Tab 2 (正在播放 / Now Playing)
      ▼                              ├── SpinningVinyl (旋转唱片)
 InspirationRecord (SwiftData)       ├── TypewriterText (逐字歌词)
      │                              ├── AudioManager (lo-fi + DJ TTS)
-     ▼                              └── Haptics (触感反馈)
-Tab 3 (唱片架 / Shelf)
+     ▼                              ├── MusicService (Apple Music 预览)
+Tab 3 (唱片架 / Shelf)              ├── ShareCard (分享卡片)
+                                    └── Haptics (触感反馈)
+
+NotificationManager (每日 8PM 推送 / Daily 8PM Push)
 ```
 
 ---
@@ -113,14 +124,17 @@ Tab 3 (唱片架 / Shelf)
 VinylSoul/
 ├── App/                    # @main entry, AppStore, Color extension
 ├── Models/                 # Codable value types (GenerationResult, Mood, StyleTag)
-├── Services/               # DeepSeekService (actor), AudioManager, KeychainManager
+├── Services/               # DeepSeekService, AudioManager, KeychainManager
+│                           #   MusicService, NotificationManager
 ├── ViewModels/             # @Observable classes per screen
 ├── Views/
 │   ├── InspirationView     # Tab 1 — input form
-│   ├── PlaybackView        # Tab 2 — vinyl + lyrics + DJ
-│   ├── HistoryView         # Tab 3 — past generations list
+│   ├── PlaybackView        # Tab 2 — vinyl + lyrics + DJ + recs
+│   ├── HistoryView         # Tab 3 — past generations list + detail
 │   ├── SettingsView        # API key sheet
-│   └── Components/         # MoodSlider, StyleTagChip, SpinningVinyl, etc.
+│   └── Components/         # MoodSlider, StyleTagChip, SpinningVinyl,
+│                           #   TypewriterText, HistoryCard, RecommendationRow,
+│                           #   ShareCardView, ShareSheet
 ├── Persistence/            # InspirationRecord (@Model)
 └── Assets/                 # vinyl.png, lofi-beat.mp3
 ```
@@ -139,10 +153,13 @@ VinylSoul/
 
 ## 📋 待办 / Roadmap
 
-- [ ] 分享卡片 — 歌词+封面合成图片分享 / Share card — lyrics + cover image export
-- [ ] MusicKit 集成 — Apple Music 预览与添加 / MusicKit integration — preview & add to library
+- [x] 触感反馈 / Haptic feedback
+- [x] 每日灵感推送 / Daily inspiration push
+- [x] 分享卡片 / Share card
+- [x] MusicKit 集成 / MusicKit integration
 - [ ] 更多 R&B 风格标签 / More R&B style tags
 - [ ] iPad 适配 / iPad layout adaptation
+- [ ] Apple Music 资料库添加 / Add to Apple Music library
 
 ---
 
