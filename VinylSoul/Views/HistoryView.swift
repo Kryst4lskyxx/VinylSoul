@@ -103,13 +103,7 @@ struct PastPlaybackView: View {
                     if let data = record.recommendationsJSON.data(using: .utf8),
                        let songs = try? JSONDecoder().decode([SongRecommendation].self, from: data) {
                         ForEach(songs) { song in
-                            HStack {
-                                Text(song.title)
-                                    .fontWeight(.medium)
-                                Text(song.artist)
-                                    .foregroundStyle(.secondary)
-                            }
-                            .font(.subheadline)
+                            RecommendationRow(recommendation: song)
                         }
                     }
                 }

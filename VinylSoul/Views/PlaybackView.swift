@@ -81,7 +81,23 @@ struct PlaybackView: View {
                                 .foregroundStyle(Color(hex: "#E8A850"))
                             }
                         }
-                        .padding(.bottom, 24)
+
+                        if !result.recommendations.isEmpty {
+                            VStack(alignment: .leading, spacing: 10) {
+                                Text("推荐歌曲")
+                                    .font(.headline)
+                                    .foregroundStyle(.secondary)
+                                    .padding(.horizontal)
+
+                                ForEach(result.recommendations) { song in
+                                    RecommendationRow(recommendation: song)
+                                        .padding(.horizontal)
+                                        .padding(.vertical, 6)
+                                }
+                            }
+                        }
+
+                        Spacer().frame(height: 24)
                     }
                 }
                 .sheet(isPresented: $showShareSheet) {

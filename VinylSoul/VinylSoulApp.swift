@@ -5,12 +5,14 @@ import SwiftData
 struct VinylSoulApp: App {
     @State private var appStore = AppStore()
     @State private var audioManager = AudioManager()
+    @State private var musicService = MusicService()
 
     var body: some Scene {
         WindowGroup {
             AppRoot()
                 .environment(appStore)
                 .environment(audioManager)
+                .environment(musicService)
         }
         .modelContainer(for: InspirationRecord.self)
     }
