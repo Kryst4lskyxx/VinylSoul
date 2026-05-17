@@ -28,8 +28,13 @@ struct AppRoot: View {
                 notificationManager.scheduleDailyInspiration()
             }
             .onChange(of: scenePhase) { _, newPhase in
-                if newPhase == .active {
+                switch newPhase {
+                case .active:
+                    notificationManager.markAppOpened()
+                case .background:
                     notificationManager.scheduleDailyInspiration()
+                default:
+                    break
                 }
             }
     }
