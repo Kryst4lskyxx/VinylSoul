@@ -5,6 +5,8 @@ struct PlaybackView: View {
     @Environment(AudioManager.self) private var audioManager
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @State private var viewModel = PlaybackViewModel()
+    @State private var shareConfig = ShareCardConfig()
+    @State private var showShareConfig = false
     @State private var shareImage: UIImage?
     @State private var showShareSheet = false
 
@@ -125,18 +127,26 @@ struct PlaybackView: View {
     }
 
     private func shareButton(albumTitle: String) -> some View {
-        Button(action: {
-            shareImage = ShareCardRenderer.render(
-                albumTitle: albumTitle,
-                lyrics: viewModel.displayedText
-            )
-            showShareSheet = true
-        }) {
+        Button(action: { showShareConfig = true }) {
             VStack(spacing: 4) {
                 Image(systemName: "square.and.arrow.up").font(.title2)
                 Text("分享").font(.caption)
             }
             .foregroundStyle(Color(hex: "#E8A850"))
+        }
+        .sheet(isPresented: $showShareConfig) {
+            ShareConfigSheet(
+                config: $shareConfig,
+                onConfirm: {
+                    shareImage = ShareCardRenderer.render(
+                        albumTitle: albumTitle,
+                        lyrics: viewModel.displayedText,
+                        config: shareConfig,
+                        platform: .generic
+                    )
+                    showShareSheet = true
+                }
+            )
         }
     }
 

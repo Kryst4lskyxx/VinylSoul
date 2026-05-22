@@ -202,6 +202,8 @@ struct PastPlaybackView: View {
     let record: InspirationRecord
     @Environment(AudioManager.self) private var audioManager
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    @State private var shareConfig = ShareCardConfig()
+    @State private var showShareConfig = false
     @State private var shareImage: UIImage?
     @State private var showShareSheet = false
 
@@ -287,16 +289,26 @@ struct PastPlaybackView: View {
     private var shareToolbarItem: some ToolbarContent {
         ToolbarItem(placement: .navigationBarTrailing) {
             Button {
-                shareImage = ShareCardRenderer.render(
-                    albumTitle: record.albumTitle,
-                    lyrics: record.lyrics,
-                    mood: record.moodRaw,
-                    style: record.styleTagRaw
-                )
-                showShareSheet = true
+                showShareConfig = true
             } label: {
                 Image(systemName: "square.and.arrow.up")
                     .foregroundStyle(Color(hex: "#E8A850"))
+            }
+            .sheet(isPresented: $showShareConfig) {
+                ShareConfigSheet(
+                    config: $shareConfig,
+                    onConfirm: {
+                        shareImage = ShareCardRenderer.render(
+                            albumTitle: record.albumTitle,
+                            lyrics: record.lyrics,
+                            mood: record.moodRaw,
+                            style: record.styleTagRaw,
+                            config: shareConfig,
+                            platform: .generic
+                        )
+                        showShareSheet = true
+                    }
+                )
             }
         }
     }
