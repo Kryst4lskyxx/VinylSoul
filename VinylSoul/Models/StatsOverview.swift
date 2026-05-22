@@ -36,11 +36,12 @@ struct StatsOverview {
         let topMood = moodDist.max(by: { $0.value < $1.value })?.key
 
         var timeline: [(Date, Int)] = []
-        if let range = calendar.range(of: .day, in: .month, for: Date()) {
+        let now = Date()
+        if let range = calendar.range(of: .day, in: .month, for: now) {
             for day in range {
-                var comps = calendar.dateComponents([.year, .month], from: Date())
+                var comps = calendar.dateComponents([.year, .month], from: now)
                 comps.day = day
-                if let date = calendar.date(from: comps) {
+                if let date = calendar.date(from: comps), date <= now {
                     let count = monthly.filter {
                         calendar.isDate($0.timestamp, inSameDayAs: date)
                     }.count
