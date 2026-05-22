@@ -38,6 +38,12 @@ struct HistoryView: View {
                     appStore.showStats = false
                 }
             }
+            .onChange(of: appStore.showStats) { _, newValue in
+                if newValue {
+                    showStats = true
+                    appStore.showStats = false
+                }
+            }
             .sheet(isPresented: $showStats) {
                 StatsView(viewModel: viewModel)
             }

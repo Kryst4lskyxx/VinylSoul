@@ -121,15 +121,15 @@ struct ShareCardView: View {
     private var vinylCircles: some View {
         Group {
             Circle()
-                .stroke(Color(hex: "#E8A850").opacity(0.06), lineWidth: 1.5)
+                .stroke(Color(hex: config.accentColor.hex).opacity(0.06), lineWidth: 1.5)
                 .frame(width: 360, height: 360)
                 .offset(x: 100, y: -180)
             Circle()
-                .stroke(Color(hex: "#E8A850").opacity(0.04), lineWidth: 1)
+                .stroke(Color(hex: config.accentColor.hex).opacity(0.04), lineWidth: 1)
                 .frame(width: 220, height: 220)
                 .offset(x: -120, y: 200)
             Circle()
-                .stroke(Color(hex: "#E8A850").opacity(0.05), lineWidth: 1)
+                .stroke(Color(hex: config.accentColor.hex).opacity(0.05), lineWidth: 1)
                 .frame(width: 140, height: 140)
                 .offset(x: -120, y: 200)
         }
@@ -147,7 +147,7 @@ struct ShareCardView: View {
                     .frame(width: CGFloat(70 - i * 17), height: CGFloat(70 - i * 17))
             }
             Circle()
-                .fill(Color(hex: "#E8A850"))
+                .fill(Color(hex: config.accentColor.hex))
                 .frame(width: 22, height: 22)
             Circle()
                 .fill(Color(hex: "#0d0d0d"))

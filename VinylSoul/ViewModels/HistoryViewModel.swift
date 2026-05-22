@@ -67,7 +67,11 @@ final class HistoryViewModel {
 
     func toggleFavorite(_ record: InspirationRecord, modelContext: ModelContext) {
         record.isFavorite.toggle()
-        try? modelContext.save()
+        do {
+            try modelContext.save()
+        } catch {
+            record.isFavorite.toggle()
+        }
     }
 
     var hasActiveFilters: Bool {
