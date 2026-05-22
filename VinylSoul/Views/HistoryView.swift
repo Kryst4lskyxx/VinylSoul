@@ -126,7 +126,9 @@ struct HistoryView: View {
                         NavigationLink {
                             PastPlaybackView(record: record)
                         } label: {
-                            HistoryCard(record: record)
+                            HistoryCard(record: record) {
+                                viewModel.toggleFavorite(record, modelContext: modelContext)
+                            }
                         }
                         .contextMenu {
                             Button(role: .destructive) {
@@ -146,7 +148,9 @@ struct HistoryView: View {
                     NavigationLink {
                         PastPlaybackView(record: record)
                     } label: {
-                        HistoryCard(record: record)
+                        HistoryCard(record: record) {
+                            viewModel.toggleFavorite(record, modelContext: modelContext)
+                        }
                     }
                     .listRowSeparator(.hidden)
                     .listRowBackground(Color.clear)

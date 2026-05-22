@@ -2,6 +2,7 @@ import SwiftUI
 
 struct HistoryCard: View {
     let record: InspirationRecord
+    var onToggleFavorite: (() -> Void)?
 
     private var moodEmoji: String {
         switch record.moodRaw {
@@ -19,6 +20,13 @@ struct HistoryCard: View {
                     .font(.headline)
                     .foregroundStyle(Color(hex: "#E8A850"))
                 Spacer()
+                if onToggleFavorite != nil {
+                    Button(action: { onToggleFavorite?() }) {
+                        Image(systemName: record.isFavorite ? "heart.fill" : "heart")
+                            .font(.title3)
+                            .foregroundStyle(record.isFavorite ? Color(hex: "#E04040") : .secondary)
+                    }
+                }
                 Text(moodEmoji)
                     .font(.title3)
             }
