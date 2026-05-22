@@ -21,6 +21,9 @@
 - **🆕 每日灵感推送** — 每晚 8 点本地通知提醒「今天的 R&B 心情是什么？」，已打开则自动跳过
 - **🆕 分享卡片** — 歌词+黑胶封面合成 1:1 图片，一键分享到 Instagram / 微信
 - **🆕 MusicKit 集成** — Apple Music 曲库搜索，显示专辑封面，支持 30 秒预览播放
+- **🆕 8 种 R&B 风格** — 90's Slow Jam、Neo-Soul、Alternative R&B、Contemporary R&B、PB R&B、Quiet Storm、New Jack Swing、Trap Soul
+- **🆕 iPad 适配** — 横屏侧边播放、双列网格唱片架、居中输入表单
+- **🆕 添加到资料库** — 一键将推荐歌曲添加至 Apple Music 资料库
 
 ---
 
@@ -32,6 +35,9 @@
 - **🆕 Daily Inspiration Push** — 8 PM local notification reminder, smart skip if app already opened today
 - **🆕 Share Card** — Composite album art + lyrics into 1:1 image, share via Instagram / WeChat / system sheet
 - **🆕 MusicKit Integration** — Apple Music catalog search, album art display, 30s preview playback
+- **🆕 8 R&B Style Tags** — 90's Slow Jam to Trap Soul, spanning classic to contemporary R&B
+- **🆕 iPad Layout** — Side-by-side playback, 2-column grid shelf, centered input form
+- **🆕 Add to Library** — One-tap add recommended songs to Apple Music library
 
 ---
 
@@ -157,9 +163,9 @@ VinylSoul/
 - [x] 每日灵感推送 / Daily inspiration push
 - [x] 分享卡片 / Share card
 - [x] MusicKit 集成 / MusicKit integration
-- [ ] 更多 R&B 风格标签 / More R&B style tags
-- [ ] iPad 适配 / iPad layout adaptation
-- [ ] Apple Music 资料库添加 / Add to Apple Music library
+- [x] 更多 R&B 风格标签 / More R&B style tags (3→8)
+- [x] iPad 适配 / iPad layout adaptation
+- [x] Apple Music 资料库添加 / Add to Apple Music library
 
 ---
 
