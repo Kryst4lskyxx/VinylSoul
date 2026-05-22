@@ -12,7 +12,9 @@
 		0E3FCDCA4F878D2D88363769 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997BF836D17C7F7D70456247 /* KeychainManager.swift */; };
 		26D4D68356A0ED21ED8F55C8 /* TypewriterText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127C5ECAFA1C0CE5DBCCFFDD /* TypewriterText.swift */; };
 		2F77EFCDDDF968025A56A7AD /* InspirationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08DB8600376874A4544B75F /* InspirationView.swift */; };
+		3136016E4B74765A431B0935 /* StatsOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520F4FC5382ACEDADDD4AE57 /* StatsOverview.swift */; };
 		31779E05A96A672874C13E33 /* HistoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F02731D1F34FC910C7D429 /* HistoryCard.swift */; };
+		3201DFB42BC568E2B71C61B7 /* VinylSoulWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BAE34FB4EFA8122051C8B6 /* VinylSoulWidget.swift */; };
 		3215882234743AE6E59113F2 /* ShareTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72467AEA88D462F89F6F102D /* ShareTypes.swift */; };
 		3FCFFDA8D97D143B3FA93346 /* DeepSeekServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1129CCFE231F13F124001470 /* DeepSeekServiceTests.swift */; };
 		4594F03C68C6C3158D9DD84C /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD0FF27F28DA028162384D9 /* ShareSheet.swift */; };
@@ -22,14 +24,19 @@
 		67B8389EBE8B8FA467253F43 /* StyleTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC7EBF66F27ED26BF1ABBC6 /* StyleTag.swift */; };
 		71387A44D0AFE52B37FF978A /* InspirationRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D64D7821A40ECAA874DB48 /* InspirationRecord.swift */; };
 		748378E81174A892DC0A82A6 /* InspirationViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6850E2BAD22858BFC95856 /* InspirationViewTests.swift */; };
+		7AC2AFFD358BF10DDB425E9E /* ShareTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72467AEA88D462F89F6F102D /* ShareTypes.swift */; };
 		7ADF92DF4942DCCF3963CEE6 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D5DA0B14C90CF403F42AFB /* StatsView.swift */; };
 		7BEA3717A8D0820A35445E1D /* ShareCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF3657FF5F63E33A54ED699 /* ShareCardView.swift */; };
 		7FB51E31A497401BC048C155 /* MusicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2533DAD0DA86815798C2F3 /* MusicService.swift */; };
+		83A7A6E541926E7AC8974E2F /* SongRecommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A04B2E0551FF4F954A106 /* SongRecommendation.swift */; };
 		9708E26D873193B50F072657 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9105D31959A7995282EAB6C /* HistoryView.swift */; };
 		9993397E6C5D1C671E0E124A /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1C6E5BFE9A3897C84FA7B9 /* NotificationManager.swift */; };
 		9FD284B5BAD095BD17DE1B09 /* GenerationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93C992B1DFFD4910803EA46 /* GenerationResult.swift */; };
 		AAFE4AFB0FBB435C03DB385C /* RecommendationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D831EEA3379C97774A34E97 /* RecommendationRow.swift */; };
 		B3F357C1733E74D086C1C875 /* InspirationRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F0ADD81B338BAEA10D7444 /* InspirationRecordTests.swift */; };
+		B4E8A318B3C7C590F8E2AC9A /* InspirationRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D64D7821A40ECAA874DB48 /* InspirationRecord.swift */; };
+		B7B0255A64A5C2E42F71FDC9 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0FEAA14DE061585CF896BC /* Mood.swift */; };
+		B8AADDB80BC5D38B814D611B /* GenerationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93C992B1DFFD4910803EA46 /* GenerationResult.swift */; };
 		BDFDA242E420322760D312C6 /* StatsOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520F4FC5382ACEDADDD4AE57 /* StatsOverview.swift */; };
 		BFCA1BE8252C5DE9FD4FAA03 /* GenerationResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6D745A986A28E4E6CE1A75 /* GenerationResultTests.swift */; };
 		C056D5E44AA46055C7591293 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E60DBEC990FCE04D1106EB /* HistoryViewModel.swift */; };
@@ -39,9 +46,12 @@
 		CE1C635F68E6233FB927CEDF /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0FEAA14DE061585CF896BC /* Mood.swift */; };
 		CF50DACAEB8D32B3897BFF51 /* SongRecommendation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6A04B2E0551FF4F954A106 /* SongRecommendation.swift */; };
 		DA781E14C058778EA8905BF5 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74D1EAB24BB9C12D97D83AD /* AudioManager.swift */; };
+		DA83761AA0E525347E88EEF1 /* ShareConfigSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589D0BF267096E6D97D096DE /* ShareConfigSheet.swift */; };
 		DCF4DDA8B023D366B702208B /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B61BFB8BCABBDD0F186A29 /* AppStore.swift */; };
 		DF0207409C6AFC90BBF4DBA5 /* InspirationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21772DF24F8049ECA25D9D6 /* InspirationViewModel.swift */; };
+		DFA365AFDF1D8E3B77BCFBA1 /* StyleTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC7EBF66F27ED26BF1ABBC6 /* StyleTag.swift */; };
 		E05D0C8D87CF701B68EDBD14 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3039377FAA263B197331F57C /* SettingsView.swift */; };
+		E3EB68FD2841F88EE0F49E28 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF471728304623EE9F817487 /* Color+Hex.swift */; };
 		EF488D75A3909F40E917EE68 /* VinylSoulApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25812FA319AC93F41D2104F2 /* VinylSoulApp.swift */; };
 		FE2FBF0CED15F55C62877FD6 /* SpinningVinyl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD73EB0ED2F62AEE8DC38BA /* SpinningVinyl.swift */; };
 /* End PBXBuildFile section */
@@ -77,6 +87,8 @@
 		3898844F55EB2B051F05CCD7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3FD0FF27F28DA028162384D9 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
 		520F4FC5382ACEDADDD4AE57 /* StatsOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsOverview.swift; sourceTree = "<group>"; };
+		589D0BF267096E6D97D096DE /* ShareConfigSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareConfigSheet.swift; sourceTree = "<group>"; };
+		5FF8F22516913ECEA5D63789 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		60F02731D1F34FC910C7D429 /* HistoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCard.swift; sourceTree = "<group>"; };
 		66D5DA0B14C90CF403F42AFB /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		6D831EEA3379C97774A34E97 /* RecommendationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationRow.swift; sourceTree = "<group>"; };
@@ -91,7 +103,9 @@
 		A03C2F27F368B1451F71B4F5 /* VinylSoulUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = VinylSoulUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A74D1EAB24BB9C12D97D83AD /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		A93C992B1DFFD4910803EA46 /* GenerationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationResult.swift; sourceTree = "<group>"; };
+		AA294F8AB741C263E7BDE19C /* VinylSoul.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VinylSoul.entitlements; sourceTree = "<group>"; };
 		AD9E0C5993ADDC32431A101D /* StyleTagChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleTagChip.swift; sourceTree = "<group>"; };
+		B0BAE34FB4EFA8122051C8B6 /* VinylSoulWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VinylSoulWidget.swift; sourceTree = "<group>"; };
 		B75EFEB5FBB1C08BE4F0F516 /* PlaybackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackView.swift; sourceTree = "<group>"; };
 		B7D64D7821A40ECAA874DB48 /* InspirationRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationRecord.swift; sourceTree = "<group>"; };
 		C510E6C8A89B31CEEE246938 /* KeychainManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManagerTests.swift; sourceTree = "<group>"; };
@@ -103,6 +117,7 @@
 		E21772DF24F8049ECA25D9D6 /* InspirationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationViewModel.swift; sourceTree = "<group>"; };
 		EBC7EBF66F27ED26BF1ABBC6 /* StyleTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleTag.swift; sourceTree = "<group>"; };
 		EE2F261B4AEF6BBB9F989EBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F28C3AD9C4B099B224591F5A /* VinylSoulWidget.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = VinylSoulWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE6D745A986A28E4E6CE1A75 /* GenerationResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerationResultTests.swift; sourceTree = "<group>"; };
 		FF471728304623EE9F817487 /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,6 +146,7 @@
 				76AC607526D17F9632390A26 /* VinylSoul */,
 				7CAECF8FC68C2C19BEF223C0 /* VinylSoulTests */,
 				D38EF641EA429927251FCD0A /* VinylSoulUITests */,
+				ABAA5D7D5699C928B78B7D58 /* VinylSoulWidget */,
 				779ADA3E6DD59F6B0A67CEE0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -153,6 +169,7 @@
 			children = (
 				3898844F55EB2B051F05CCD7 /* ContentView.swift */,
 				EE2F261B4AEF6BBB9F989EBD /* Info.plist */,
+				AA294F8AB741C263E7BDE19C /* VinylSoul.entitlements */,
 				25812FA319AC93F41D2104F2 /* VinylSoulApp.swift */,
 				B5D0D0BAD58598369BC42746 /* App */,
 				AAF35936494EEFE2BE2D04F4 /* Models */,
@@ -170,6 +187,7 @@
 				9D0E8986DC8BABB01AC095A1 /* VinylSoul.app */,
 				9817EDD29CB14F821E2165A2 /* VinylSoulTests.xctest */,
 				A03C2F27F368B1451F71B4F5 /* VinylSoulUITests.xctest */,
+				F28C3AD9C4B099B224591F5A /* VinylSoulWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -213,6 +231,15 @@
 				EBC7EBF66F27ED26BF1ABBC6 /* StyleTag.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		ABAA5D7D5699C928B78B7D58 /* VinylSoulWidget */ = {
+			isa = PBXGroup;
+			children = (
+				5FF8F22516913ECEA5D63789 /* Info.plist */,
+				B0BAE34FB4EFA8122051C8B6 /* VinylSoulWidget.swift */,
+			);
+			path = VinylSoulWidget;
 			sourceTree = "<group>";
 		};
 		B5D0D0BAD58598369BC42746 /* App */ = {
@@ -259,6 +286,7 @@
 				CA340B6C3E8A15FB44B586DB /* MoodSlider.swift */,
 				6D831EEA3379C97774A34E97 /* RecommendationRow.swift */,
 				8EF3657FF5F63E33A54ED699 /* ShareCardView.swift */,
+				589D0BF267096E6D97D096DE /* ShareConfigSheet.swift */,
 				3FD0FF27F28DA028162384D9 /* ShareSheet.swift */,
 				2BD73EB0ED2F62AEE8DC38BA /* SpinningVinyl.swift */,
 				AD9E0C5993ADDC32431A101D /* StyleTagChip.swift */,
@@ -270,6 +298,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		639D5AAB7646A4E847C9AC8D /* VinylSoulWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 657A2F89ED139CDF9447516F /* Build configuration list for PBXNativeTarget "VinylSoulWidget" */;
+			buildPhases = (
+				92941E93EFE93B8B89E625E6 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VinylSoulWidget;
+			packageProductDependencies = (
+			);
+			productName = VinylSoulWidget;
+			productReference = F28C3AD9C4B099B224591F5A /* VinylSoulWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		68B4634661824F0A4745EF0B /* VinylSoul */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0653AD22AE46960026095C5D /* Build configuration list for PBXNativeTarget "VinylSoul" */;
@@ -354,6 +399,7 @@
 				68B4634661824F0A4745EF0B /* VinylSoul */,
 				AE827A3AFFC5D146EE1BBD46 /* VinylSoulTests */,
 				D8006AF44F2F4CBB249FF4D8 /* VinylSoulUITests */,
+				639D5AAB7646A4E847C9AC8D /* VinylSoulWidget */,
 			);
 		};
 /* End PBXProject section */
@@ -393,6 +439,7 @@
 				AAFE4AFB0FBB435C03DB385C /* RecommendationRow.swift in Sources */,
 				E05D0C8D87CF701B68EDBD14 /* SettingsView.swift in Sources */,
 				7BEA3717A8D0820A35445E1D /* ShareCardView.swift in Sources */,
+				DA83761AA0E525347E88EEF1 /* ShareConfigSheet.swift in Sources */,
 				4594F03C68C6C3158D9DD84C /* ShareSheet.swift in Sources */,
 				3215882234743AE6E59113F2 /* ShareTypes.swift in Sources */,
 				CF50DACAEB8D32B3897BFF51 /* SongRecommendation.swift in Sources */,
@@ -403,6 +450,22 @@
 				CB3D58335ED04D932A3DD7D7 /* StyleTagChip.swift in Sources */,
 				26D4D68356A0ED21ED8F55C8 /* TypewriterText.swift in Sources */,
 				EF488D75A3909F40E917EE68 /* VinylSoulApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		92941E93EFE93B8B89E625E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3EB68FD2841F88EE0F49E28 /* Color+Hex.swift in Sources */,
+				B8AADDB80BC5D38B814D611B /* GenerationResult.swift in Sources */,
+				B4E8A318B3C7C590F8E2AC9A /* InspirationRecord.swift in Sources */,
+				B7B0255A64A5C2E42F71FDC9 /* Mood.swift in Sources */,
+				7AC2AFFD358BF10DDB425E9E /* ShareTypes.swift in Sources */,
+				83A7A6E541926E7AC8974E2F /* SongRecommendation.swift in Sources */,
+				3136016E4B74765A431B0935 /* StatsOverview.swift in Sources */,
+				DFA365AFDF1D8E3B77BCFBA1 /* StyleTag.swift in Sources */,
+				3201DFB42BC568E2B71C61B7 /* VinylSoulWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,10 +496,27 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		25DAC06AA0D47DE20481F126 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = VinylSoul/VinylSoul.entitlements;
+				INFOPLIST_FILE = VinylSoulWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vinylsoul.app.widget;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		3E2F770E7D4F1ED7E436D7B0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = VinylSoul/VinylSoul.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = VinylSoul/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -626,6 +706,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = VinylSoul/VinylSoul.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = VinylSoul/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -658,6 +739,22 @@
 			};
 			name = Debug;
 		};
+		F18502FB562B94E7CCE85D76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = VinylSoul/VinylSoul.entitlements;
+				INFOPLIST_FILE = VinylSoulWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vinylsoul.app.widget;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -675,6 +772,15 @@
 			buildConfigurations = (
 				4D47A7C18F360A29C1686E1E /* Debug */,
 				941A7D6D75AF6705E65A6B60 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		657A2F89ED139CDF9447516F /* Build configuration list for PBXNativeTarget "VinylSoulWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F18502FB562B94E7CCE85D76 /* Debug */,
+				25DAC06AA0D47DE20481F126 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

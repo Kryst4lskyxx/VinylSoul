@@ -18,10 +18,28 @@ targets:
       - path: VinylSoul
     info:
       path: VinylSoul/Info.plist
+    entitlements:
+      path: VinylSoul/VinylSoul.entitlements
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.vinylsoul.app
         UIBackgroundModes: ["audio"]
+
+  VinylSoulWidget:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: VinylSoulWidget
+      - path: VinylSoul/Models
+      - path: VinylSoul/Persistence
+      - path: VinylSoul/App/Color+Hex.swift
+    info:
+      path: VinylSoulWidget/Info.plist
+    entitlements:
+      path: VinylSoul/VinylSoul.entitlements
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.vinylsoul.app.widget
 
   VinylSoulTests:
     type: bundle.unit-test

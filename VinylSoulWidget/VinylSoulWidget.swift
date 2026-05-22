@@ -13,12 +13,16 @@ struct Provider: TimelineProvider {
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<WidgetEntry>) -> Void) {
-        let entry = loadLatestEntry()
-        let refresh = Calendar.current.date(byAdding: .minute, value: 15, to: Date())!
-        let timeline = Timeline(entries: [entry], policy: .after(refresh))
-        completion(timeline)
+        nonisolated(unsafe) let safeCompletion = completion
+        Task { @MainActor in
+            let entry = loadLatestEntry()
+            let refresh = Calendar.current.date(byAdding: .minute, value: 15, to: Date())!
+            let timeline = Timeline(entries: [entry], policy: .after(refresh))
+            safeCompletion(timeline)
+        }
     }
 
+    @MainActor
     private func loadLatestEntry() -> WidgetEntry {
         guard let containerURL = FileManager.default
             .containerURL(forSecurityApplicationGroupIdentifier: "group.com.vinylsoul.app")
