@@ -48,7 +48,10 @@ struct InspirationView: View {
                         .font(.subheadline.weight(.medium))
                         .foregroundStyle(.secondary)
 
-                    HStack(spacing: 10) {
+                    LazyVGrid(
+                        columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())],
+                        spacing: 8
+                    ) {
                         ForEach(StyleTag.allCases, id: \.self) { style in
                             StyleTagChip(
                                 style: style,
