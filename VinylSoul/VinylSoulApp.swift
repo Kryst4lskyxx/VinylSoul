@@ -49,18 +49,18 @@ struct VinylSoulApp: App {
     }
 
     private var sharedModelContainer: ModelContainer {
-        guard let containerURL = FileManager.default
-            .containerURL(forSecurityApplicationGroupIdentifier: appGroupID)
-        else {
-            fatalError("App Group container URL not found. Check provisioning profile.")
+        if let containerURL = FileManager.default
+            .containerURL(forSecurityApplicationGroupIdentifier: appGroupID) {
+            let storeURL = containerURL.appendingPathComponent("VinylSoul.sqlite")
+            let configuration = ModelConfiguration(url: storeURL)
+            if let container = try? ModelContainer(for: InspirationRecord.self, configurations: configuration) {
+                return container
+            }
         }
-        let storeURL = containerURL.appendingPathComponent("VinylSoul.sqlite")
-        let configuration = ModelConfiguration(url: storeURL)
-        do {
-            return try ModelContainer(for: InspirationRecord.self, configurations: configuration)
-        } catch {
-            fatalError("Failed to create ModelContainer: \(error)")
+        guard let container = try? ModelContainer(for: InspirationRecord.self) else {
+            fatalError("Failed to create ModelContainer")
         }
+        return container
     }
 }
 
