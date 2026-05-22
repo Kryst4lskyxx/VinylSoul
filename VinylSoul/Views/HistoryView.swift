@@ -4,7 +4,9 @@ import SwiftData
 struct HistoryView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.horizontalSizeClass) private var horizontalSizeClass
+    @Environment(AppStore.self) private var appStore
     @State private var viewModel = HistoryViewModel()
+    @State private var showStats = false
 
     private let columns = [
         GridItem(.flexible(), spacing: 12),
@@ -13,74 +15,181 @@ struct HistoryView: View {
 
     var body: some View {
         NavigationStack {
-            Group {
-                if viewModel.records.isEmpty {
-                    VStack(spacing: 16) {
-                        Image(systemName: "square.stack")
-                            .font(.system(size: 60))
-                            .foregroundStyle(.secondary)
-                        Text("还没有灵感唱片，去创作一张吧 🎵")
-                            .font(.body)
-                            .foregroundStyle(.secondary)
-                            .multilineTextAlignment(.center)
-                            .padding(.horizontal)
-                    }
-                    .frame(maxHeight: .infinity)
-                } else if horizontalSizeClass == .regular {
-                    ScrollView {
-                        LazyVGrid(columns: columns, spacing: 12) {
-                            ForEach(viewModel.records) { record in
-                                NavigationLink {
-                                    PastPlaybackView(record: record)
-                                } label: {
-                                    HistoryCard(record: record)
-                                }
-                                .contextMenu {
-                                    Button(role: .destructive) {
-                                        viewModel.delete(record, modelContext: modelContext)
-                                    } label: {
-                                        Label("删除", systemImage: "trash")
-                                    }
-                                }
-                            }
-                        }
-                        .padding(.horizontal, 24)
-                        .padding(.vertical, 8)
-                    }
-                } else {
-                    List {
-                        ForEach(viewModel.records) { record in
-                            NavigationLink {
-                                PastPlaybackView(record: record)
-                            } label: {
-                                HistoryCard(record: record)
-                            }
-                            .listRowSeparator(.hidden)
-                            .listRowBackground(Color.clear)
-                            .listRowInsets(EdgeInsets(top: 6, leading: 16, bottom: 6, trailing: 16))
-                            .contextMenu {
-                                Button(role: .destructive) {
-                                    viewModel.delete(record, modelContext: modelContext)
-                                } label: {
-                                    Label("删除", systemImage: "trash")
-                                }
-                            }
-                        }
-                        .onDelete { indexSet in
-                            for index in indexSet {
-                                viewModel.delete(viewModel.records[index], modelContext: modelContext)
-                            }
-                        }
-                    }
-                    .listStyle(.plain)
-                    .scrollContentBackground(.hidden)
-                }
+            VStack(spacing: 0) {
+                searchAndFilterBar
+                recordList
             }
             .navigationTitle("唱片架")
             .navigationBarTitleDisplayMode(.large)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        showStats = true
+                    } label: {
+                        Image(systemName: "chart.bar.fill")
+                            .foregroundStyle(Color(hex: "#E8A850"))
+                    }
+                }
+            }
             .onAppear {
                 viewModel.fetch(modelContext: modelContext)
+                if appStore.showStats {
+                    showStats = true
+                    appStore.showStats = false
+                }
             }
+            .sheet(isPresented: $showStats) {
+                StatsView(viewModel: viewModel)
+            }
+        }
+    }
+
+    @ViewBuilder
+    private var searchAndFilterBar: some View {
+        VStack(spacing: 10) {
+            HStack(spacing: 8) {
+                Image(systemName: "magnifyingglass")
+                    .foregroundStyle(.secondary)
+                TextField("搜索专辑或歌词...", text: $viewModel.searchText)
+                    .textFieldStyle(.plain)
+            }
+            .padding(10)
+            .background(Color(.systemGray6).opacity(0.4))
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .padding(.horizontal)
+
+            Picker("筛选", selection: $viewModel.filterMode) {
+                ForEach(HistoryViewModel.FilterMode.allCases, id: \.self) { mode in
+                    Text(mode.rawValue).tag(mode)
+                }
+            }
+            .pickerStyle(.segmented)
+            .padding(.horizontal)
+
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 6) {
+                    ForEach(viewModel.moodFilterOptions, id: \.self) { mood in
+                        FilterChip(
+                            label: mood,
+                            isSelected: viewModel.selectedMoodFilters.contains(mood),
+                            color: .purple
+                        ) {
+                            viewModel.toggleMoodFilter(mood)
+                        }
+                    }
+                    ForEach(viewModel.styleFilterOptions, id: \.self) { style in
+                        FilterChip(
+                            label: style,
+                            isSelected: viewModel.selectedStyleFilters.contains(style),
+                            color: .orange
+                        ) {
+                            viewModel.toggleStyleFilter(style)
+                        }
+                    }
+                }
+                .padding(.horizontal)
+            }
+
+            if viewModel.hasActiveFilters {
+                Button {
+                    viewModel.clearAllFilters()
+                } label: {
+                    Text("清除筛选")
+                        .font(.caption)
+                        .foregroundStyle(Color(hex: "#E8A850"))
+                }
+            }
+        }
+        .padding(.vertical, 8)
+    }
+
+    @ViewBuilder
+    private var recordList: some View {
+        if viewModel.filteredRecords.isEmpty {
+            VStack(spacing: 16) {
+                Image(systemName: viewModel.hasActiveFilters
+                      ? "magnifyingglass" : "square.stack")
+                    .font(.system(size: 60))
+                    .foregroundStyle(.secondary)
+                Text(viewModel.hasActiveFilters
+                     ? "没有找到匹配的唱片" : "还没有灵感唱片，去创作一张吧 🎵")
+                    .font(.body)
+                    .foregroundStyle(.secondary)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal)
+            }
+            .frame(maxHeight: .infinity)
+        } else if horizontalSizeClass == .regular {
+            ScrollView {
+                LazyVGrid(columns: columns, spacing: 12) {
+                    ForEach(viewModel.filteredRecords) { record in
+                        NavigationLink {
+                            PastPlaybackView(record: record)
+                        } label: {
+                            HistoryCard(record: record)
+                        }
+                        .contextMenu {
+                            Button(role: .destructive) {
+                                viewModel.delete(record, modelContext: modelContext)
+                            } label: {
+                                Label("删除", systemImage: "trash")
+                            }
+                        }
+                    }
+                }
+                .padding(.horizontal, 24)
+                .padding(.vertical, 8)
+            }
+        } else {
+            List {
+                ForEach(viewModel.filteredRecords) { record in
+                    NavigationLink {
+                        PastPlaybackView(record: record)
+                    } label: {
+                        HistoryCard(record: record)
+                    }
+                    .listRowSeparator(.hidden)
+                    .listRowBackground(Color.clear)
+                    .listRowInsets(EdgeInsets(top: 6, leading: 16, bottom: 6, trailing: 16))
+                    .contextMenu {
+                        Button(role: .destructive) {
+                            viewModel.delete(record, modelContext: modelContext)
+                        } label: {
+                            Label("删除", systemImage: "trash")
+                        }
+                    }
+                }
+                .onDelete { indexSet in
+                    for index in indexSet {
+                        viewModel.delete(viewModel.filteredRecords[index], modelContext: modelContext)
+                    }
+                }
+            }
+            .listStyle(.plain)
+            .scrollContentBackground(.hidden)
+        }
+    }
+}
+
+private struct FilterChip: View {
+    let label: String
+    let isSelected: Bool
+    let color: Color
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            Text(label)
+                .font(.caption)
+                .padding(.horizontal, 10)
+                .padding(.vertical, 5)
+                .background(isSelected ? color.opacity(0.3) : Color(.systemGray6).opacity(0.4))
+                .foregroundStyle(isSelected ? color : .secondary)
+                .clipShape(Capsule())
+                .overlay(
+                    Capsule()
+                        .stroke(isSelected ? color : Color.clear, lineWidth: 0.5)
+                )
         }
     }
 }

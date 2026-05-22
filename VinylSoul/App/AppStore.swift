@@ -6,6 +6,7 @@ final class AppStore {
     var currentResult: GenerationResult?
     var selectedTab: Int = 0
     var apiKey: String?
+    var showStats = false
     var hasAPIKey: Bool { apiKey != nil }
 
     private let keychain = KeychainManager()

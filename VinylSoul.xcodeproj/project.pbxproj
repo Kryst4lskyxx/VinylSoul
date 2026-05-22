@@ -22,6 +22,7 @@
 		67B8389EBE8B8FA467253F43 /* StyleTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC7EBF66F27ED26BF1ABBC6 /* StyleTag.swift */; };
 		71387A44D0AFE52B37FF978A /* InspirationRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D64D7821A40ECAA874DB48 /* InspirationRecord.swift */; };
 		748378E81174A892DC0A82A6 /* InspirationViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6850E2BAD22858BFC95856 /* InspirationViewTests.swift */; };
+		7ADF92DF4942DCCF3963CEE6 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D5DA0B14C90CF403F42AFB /* StatsView.swift */; };
 		7BEA3717A8D0820A35445E1D /* ShareCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF3657FF5F63E33A54ED699 /* ShareCardView.swift */; };
 		7FB51E31A497401BC048C155 /* MusicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2533DAD0DA86815798C2F3 /* MusicService.swift */; };
 		9708E26D873193B50F072657 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9105D31959A7995282EAB6C /* HistoryView.swift */; };
@@ -77,6 +78,7 @@
 		3FD0FF27F28DA028162384D9 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
 		520F4FC5382ACEDADDD4AE57 /* StatsOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsOverview.swift; sourceTree = "<group>"; };
 		60F02731D1F34FC910C7D429 /* HistoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCard.swift; sourceTree = "<group>"; };
+		66D5DA0B14C90CF403F42AFB /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
 		6D831EEA3379C97774A34E97 /* RecommendationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationRow.swift; sourceTree = "<group>"; };
 		72467AEA88D462F89F6F102D /* ShareTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareTypes.swift; sourceTree = "<group>"; };
 		8EF3657FF5F63E33A54ED699 /* ShareCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCardView.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				D08DB8600376874A4544B75F /* InspirationView.swift */,
 				B75EFEB5FBB1C08BE4F0F516 /* PlaybackView.swift */,
 				3039377FAA263B197331F57C /* SettingsView.swift */,
+				66D5DA0B14C90CF403F42AFB /* StatsView.swift */,
 				DB3E3F703B896A5338F58679 /* Components */,
 			);
 			path = Views;
@@ -395,6 +398,7 @@
 				CF50DACAEB8D32B3897BFF51 /* SongRecommendation.swift in Sources */,
 				FE2FBF0CED15F55C62877FD6 /* SpinningVinyl.swift in Sources */,
 				BDFDA242E420322760D312C6 /* StatsOverview.swift in Sources */,
+				7ADF92DF4942DCCF3963CEE6 /* StatsView.swift in Sources */,
 				67B8389EBE8B8FA467253F43 /* StyleTag.swift in Sources */,
 				CB3D58335ED04D932A3DD7D7 /* StyleTagChip.swift in Sources */,
 				26D4D68356A0ED21ED8F55C8 /* TypewriterText.swift in Sources */,
