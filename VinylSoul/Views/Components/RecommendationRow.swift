@@ -46,6 +46,22 @@ struct RecommendationRow: View {
                         .font(.title3)
                         .foregroundStyle(Color(hex: "#E8A850"))
                 }
+
+                let songID = song.id.rawValue
+                if musicService.isAddedToLibrary(songID) {
+                    Image(systemName: "checkmark")
+                        .font(.caption2)
+                        .foregroundStyle(.secondary)
+                } else {
+                    Button {
+                        Task { await musicService.addToLibrary(song) }
+                    } label: {
+                        Image(systemName: "plus")
+                            .font(.caption.weight(.bold))
+                            .foregroundStyle(.secondary)
+                            .padding(4)
+                    }
+                }
             }
         }
         .task {

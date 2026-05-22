@@ -22,5 +22,7 @@
 	<array>
 		<string>audio</string>
 	</array>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>将推荐歌曲添加到您的 Apple Music 资料库</string>
 </dict>
 </plist>

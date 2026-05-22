@@ -6,6 +6,7 @@ import MusicKit
 final class MusicService {
     var isPlaying = false
     var playingSongID: String?
+    var libraryAddStatus: [String: Bool] = [:]
 
     func searchSong(title: String, artist: String) async -> Song? {
         let term = "\(title) \(artist)"
@@ -29,5 +30,24 @@ final class MusicService {
         ApplicationMusicPlayer.shared.stop()
         isPlaying = false
         playingSongID = nil
+    }
+
+    func addToLibrary(_ song: Song) async -> Bool {
+        let status = await MusicAuthorization.request()
+        guard status == .authorized else { return false }
+
+        let songID = song.id.rawValue
+        do {
+            try await MusicLibrary.shared.add(song)
+            libraryAddStatus[songID] = true
+            return true
+        } catch {
+            libraryAddStatus[songID] = false
+            return false
+        }
+    }
+
+    func isAddedToLibrary(_ songID: String) -> Bool {
+        libraryAddStatus[songID] == true
     }
 }
