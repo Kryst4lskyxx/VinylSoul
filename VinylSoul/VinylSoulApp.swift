@@ -7,6 +7,8 @@ struct VinylSoulApp: App {
     @State private var audioManager = AudioManager()
     @State private var musicService = MusicService()
 
+    private let appGroupID = "group.com.vinylsoul.app"
+
     var body: some Scene {
         WindowGroup {
             AppRoot()
@@ -14,7 +16,22 @@ struct VinylSoulApp: App {
                 .environment(audioManager)
                 .environment(musicService)
         }
-        .modelContainer(for: InspirationRecord.self)
+        .modelContainer(sharedModelContainer)
+    }
+
+    private var sharedModelContainer: ModelContainer {
+        guard let containerURL = FileManager.default
+            .containerURL(forSecurityApplicationGroupIdentifier: appGroupID)
+        else {
+            fatalError("App Group container URL not found. Check provisioning profile.")
+        }
+        let storeURL = containerURL.appendingPathComponent("VinylSoul.sqlite")
+        let configuration = ModelConfiguration(url: storeURL)
+        do {
+            return try ModelContainer(for: InspirationRecord.self, configurations: configuration)
+        } catch {
+            fatalError("Failed to create ModelContainer: \(error)")
+        }
     }
 }
 
