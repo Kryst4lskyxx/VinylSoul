@@ -3,6 +3,7 @@ import SwiftUI
 struct InspirationView: View {
     @Environment(AppStore.self) private var appStore
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @State private var viewModel = InspirationViewModel()
     @State private var showSettings = false
 
@@ -89,6 +90,7 @@ struct InspirationView: View {
                 .padding(.horizontal)
             }
             .padding(.bottom, 32)
+            .frame(maxWidth: 600)
         }
         .scrollDismissesKeyboard(.interactively)
         .sheet(isPresented: $showSettings) {
