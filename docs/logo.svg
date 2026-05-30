@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Vinyl groove gradient -->
+    <radialGradient id="vinylBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1a1a1a"/>
+      <stop offset="60%" stop-color="#141414"/>
+      <stop offset="80%" stop-color="#0f0f0f"/>
+      <stop offset="100%" stop-color="#0d0d0d"/>
+    </radialGradient>
+
+    <!-- Amber accent gradient -->
+    <linearGradient id="amberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F0C060"/>
+      <stop offset="50%" stop-color="#E8A850"/>
+      <stop offset="100%" stop-color="#D4923A"/>
+    </linearGradient>
+
+    <!-- Warm glow -->
+    <radialGradient id="glow" cx="50%" cy="45%" r="40%">
+      <stop offset="0%" stop-color="#E8A850" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#E8A850" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Label gradient -->
+    <radialGradient id="labelGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2a1a0a"/>
+      <stop offset="100%" stop-color="#1a0f05"/>
+    </radialGradient>
+
+    <!-- Groove ring filter -->
+    <filter id="grooveShadow">
+      <feDropShadow dx="0" dy="0" stdDeviation="1.5" flood-color="#E8A850" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Background circle -->
+  <rect width="512" height="512" rx="112" fill="#0d0d0d"/>
+
+  <!-- Subtle background texture circles -->
+  <circle cx="256" cy="256" r="248" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+  <circle cx="256" cy="256" r="236" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+
+  <!-- Vinyl disc -->
+  <circle cx="256" cy="256" r="210" fill="url(#vinylBg)" filter="url(#grooveShadow)"/>
+
+  <!-- Vinyl grooves -->
+  <circle cx="256" cy="256" r="200" fill="none" stroke="#1e1e1e" stroke-width="0.8"/>
+  <circle cx="256" cy="256" r="190" fill="none" stroke="#1c1c1c" stroke-width="0.8"/>
+  <circle cx="256" cy="256" r="180" fill="none" stroke="#1a1a1a" stroke-width="0.8"/>
+  <circle cx="256" cy="256" r="170" fill="none" stroke="#181818" stroke-width="0.8"/>
+  <circle cx="256" cy="256" r="160" fill="none" stroke="#171717" stroke-width="0.8"/>
+  <circle cx="256" cy="256" r="150" fill="none" stroke="#161616" stroke-width="0.8"/>
+  <circle cx="256" cy="256" r="140" fill="none" stroke="#151515" stroke-width="0.8"/>
+
+  <!-- Glow behind amber ring -->
+  <circle cx="256" cy="256" r="135" fill="none" stroke="#E8A850" stroke-width="12" opacity="0.06"/>
+
+  <!-- Amber accent ring (stylus groove) -->
+  <circle cx="256" cy="256" r="128" fill="none" stroke="url(#amberGrad)" stroke-width="2" opacity="0.5"/>
+
+  <!-- Inner label -->
+  <circle cx="256" cy="256" r="90" fill="url(#labelGrad)"/>
+  <circle cx="256" cy="256" r="88" fill="none" stroke="#E8A850" stroke-width="1" opacity="0.25"/>
+
+  <!-- Warm glow overlay -->
+  <circle cx="256" cy="230" r="180" fill="url(#glow)"/>
+
+  <!-- VS monogram -->
+  <text x="256" y="248" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="bold" fill="url(#amberGrad)" letter-spacing="-2">
+    VS
+  </text>
+
+  <!-- Subtitle arc text: VINYLSOUL -->
+  <defs>
+    <path id="arcPath" d="M 170 290 A 86 86 0 0 0 342 290"/>
+    <path id="arcPathLower" d="M 185 310 A 86 86 0 0 0 327 310"/>
+  </defs>
+
+  <!-- VINYL dots along arc -->
+  <text font-family="Georgia, 'Times New Roman', serif" font-size="14" font-weight="600" fill="#E8A850" fill-opacity="0.7" letter-spacing="8">
+    <textPath href="#arcPath" startOffset="50%" text-anchor="middle">VINYLSOUL</textPath>
+  </text>
+
+  <!-- Small star divider on arc -->
+  <text x="256" y="306" text-anchor="middle" font-family="Georgia, serif" font-size="8" fill="#E8A850" fill-opacity="0.5">✦</text>
+
+  <!-- Center spindle hole -->
+  <circle cx="256" cy="256" r="8" fill="#0d0d0d"/>
+  <circle cx="256" cy="256" r="6" fill="none" stroke="#E8A850" stroke-width="0.8" opacity="0.4"/>
+
+  <!-- Light reflection on vinyl -->
+  <ellipse cx="200" cy="180" rx="80" ry="40" fill="white" opacity="0.015" transform="rotate(-20 200 180)"/>
+</svg>
