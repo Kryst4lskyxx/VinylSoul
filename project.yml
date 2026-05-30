@@ -18,6 +18,22 @@ targets:
       - path: VinylSoul
     info:
       path: VinylSoul/Info.plist
+      properties:
+        UILaunchScreen: {}
+        NSAppleMusicUsageDescription: "将推荐歌曲添加到您的 Apple Music 资料库"
+        UIApplicationShortcutItems:
+          - UIApplicationShortcutItemType: generateInspiration
+            UIApplicationShortcutItemTitle: 生成灵感
+            UIApplicationShortcutItemIconSymbolName: music.note
+          - UIApplicationShortcutItemType: viewFavorites
+            UIApplicationShortcutItemTitle: 我的收藏
+            UIApplicationShortcutItemIconSymbolName: heart.fill
+          - UIApplicationShortcutItemType: viewHistory
+            UIApplicationShortcutItemTitle: 唱片架
+            UIApplicationShortcutItemIconSymbolName: square.stack
+        CFBundleURLTypes:
+          - CFBundleURLSchemes:
+            - vinylsoul
     entitlements:
       path: VinylSoul/VinylSoul.entitlements
     settings:

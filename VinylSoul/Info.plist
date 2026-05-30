@@ -16,41 +16,6 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
-	<key>CFBundleVersion</key>
-	<string>1</string>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>audio</string>
-	</array>
-	<key>NSAppleMusicUsageDescription</key>
-	<string>将推荐歌曲添加到您的 Apple Music 资料库</string>
-	<key>UIApplicationShortcutItems</key>
-	<array>
-		<dict>
-			<key>UIApplicationShortcutItemType</key>
-			<string>generateInspiration</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>生成灵感</string>
-			<key>UIApplicationShortcutItemIconSymbolName</key>
-			<string>music.note</string>
-		</dict>
-		<dict>
-			<key>UIApplicationShortcutItemType</key>
-			<string>viewFavorites</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>我的收藏</string>
-			<key>UIApplicationShortcutItemIconSymbolName</key>
-			<string>heart.fill</string>
-		</dict>
-		<dict>
-			<key>UIApplicationShortcutItemType</key>
-			<string>viewHistory</string>
-			<key>UIApplicationShortcutItemTitle</key>
-			<string>唱片架</string>
-			<key>UIApplicationShortcutItemIconSymbolName</key>
-			<string>square.stack</string>
-		</dict>
-	</array>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -60,5 +25,38 @@
 			</array>
 		</dict>
 	</array>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>将推荐歌曲添加到您的 Apple Music 资料库</string>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconSymbolName</key>
+			<string>music.note</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>生成灵感</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>generateInspiration</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconSymbolName</key>
+			<string>heart.fill</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>我的收藏</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>viewFavorites</string>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconSymbolName</key>
+			<string>square.stack</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>唱片架</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>viewHistory</string>
+		</dict>
+	</array>
+	<key>UILaunchScreen</key>
+	<dict/>
 </dict>
 </plist>

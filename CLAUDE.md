@@ -7,7 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 This is an Xcode project. All commands run from the `.xcodeproj` directory.
 
 ```bash
-# Regenerate project after adding/removing files (REQUIRED, then re-add UIBackgroundModes)
+# Regenerate project after adding/removing files
 xcodegen generate
 
 # Build (use a concrete simulator, not 'Any iOS Simulator Device')
@@ -22,12 +22,6 @@ xcodebuild -project VinylSoul.xcodeproj -scheme VinylSoul \
 xcodebuild -project VinylSoul.xcodeproj -scheme VinylSoul \
   -only-testing:VinylSoulTests/GenerationResultTests \
   -destination 'platform=iOS Simulator,name=iPhone 17' test
-```
-
-**Important:** `xcodegen generate` wipes `UIBackgroundModes` from `Info.plist`. After every generation, re-add it:
-```xml
-<key>UIBackgroundModes</key>
-<array><string>audio</string></array>
 ```
 
 No linter is configured. Swift compiler warnings serve as the lint baseline.
