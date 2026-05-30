@@ -46,9 +46,25 @@ final class AudioManager {
 
     func speakDJ(_ script: String) {
         let utterance = AVSpeechUtterance(string: script)
-        utterance.voice = AVSpeechSynthesisVoice(language: "zh-CN")
-        utterance.rate = 0.45
-        utterance.pitchMultiplier = 0.9
+        utterance.voice = bestChineseVoice()
+        utterance.rate = AVSpeechUtteranceDefaultSpeechRate * 0.88
+        utterance.pitchMultiplier = 1.0
+        utterance.volume = 0.85
+        utterance.preUtteranceDelay = 0.15
+        utterance.postUtteranceDelay = 0.1
         synthesizer.speak(utterance)
+    }
+
+    private func bestChineseVoice() -> AVSpeechSynthesisVoice {
+        let voices = AVSpeechSynthesisVoice.speechVoices()
+            .filter { $0.language == "zh-CN" }
+        if let premium = voices.first(where: { $0.quality == .premium }) {
+            return premium
+        }
+        if let enhanced = voices.first(where: { $0.quality == .enhanced }) {
+            return enhanced
+        }
+        return AVSpeechSynthesisVoice(language: "zh-CN") ?? voices.first
+            ?? AVSpeechSynthesisVoice()
     }
 }

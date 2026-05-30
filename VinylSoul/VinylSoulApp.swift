@@ -42,6 +42,7 @@ struct VinylSoulApp: App {
                 .environment(appStore)
                 .environment(audioManager)
                 .environment(musicService)
+                .preferredColorScheme(.dark)
         }
         .modelContainer(sharedModelContainer)
     }
@@ -69,7 +70,8 @@ struct AppRoot: View {
 
     var body: some View {
         ContentView()
-            .preferredColorScheme(.dark)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color(hex: "#0d0d0d").ignoresSafeArea())
             .onAppear {
                 notificationManager.requestAuthorization()
                 notificationManager.scheduleDailyInspiration()

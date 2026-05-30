@@ -4,6 +4,7 @@ import Charts
 struct StatsView: View {
     let viewModel: HistoryViewModel
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
     private var stats: StatsOverview {
         viewModel.statsOverview()
@@ -12,14 +13,28 @@ struct StatsView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(spacing: 24) {
-                    overviewCards
-                    styleChart
-                    moodChart
-                    timelineSection
+                if horizontalSizeClass == .regular {
+                    VStack(spacing: 24) {
+                        overviewCards
+                        HStack(alignment: .top, spacing: 16) {
+                            styleChart
+                            moodChart
+                        }
+                        timelineSection
+                    }
+                    .padding(32)
+                    .frame(maxWidth: 900)
+                } else {
+                    VStack(spacing: 24) {
+                        overviewCards
+                        styleChart
+                        moodChart
+                        timelineSection
+                    }
+                    .padding()
                 }
-                .padding()
             }
+            .scrollContentBackground(.hidden)
             .navigationTitle("统计")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

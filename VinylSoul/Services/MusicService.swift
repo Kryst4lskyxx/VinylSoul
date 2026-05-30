@@ -8,11 +8,25 @@ final class MusicService {
     var playingSongID: String?
     var libraryAddStatus: [String: Bool] = [:]
 
+    private(set) var catalogAvailable: Bool? = nil
+    private var checkingCatalog = false
+
     func searchSong(title: String, artist: String) async -> Song? {
+        if catalogAvailable == false { return nil }
+        if checkingCatalog { return nil }
+
+        checkingCatalog = true
+        defer { checkingCatalog = false }
+
         let term = "\(title) \(artist)"
         let request = MusicCatalogSearchRequest(term: term, types: [Song.self])
-        guard let response = try? await request.response() else { return nil }
-        return response.songs.first
+        if let response = try? await request.response() {
+            catalogAvailable = true
+            return response.songs.first
+        } else {
+            catalogAvailable = false
+            return nil
+        }
     }
 
     func togglePreview(for song: Song) async {

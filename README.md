@@ -22,8 +22,9 @@
 - **🆕 分享卡片** — 歌词+黑胶封面合成 1:1 图片，一键分享到 Instagram / 微信
 - **🆕 MusicKit 集成** — Apple Music 曲库搜索，显示专辑封面，支持 30 秒预览播放
 - **🆕 8 种 R&B 风格** — 90's Slow Jam、Neo-Soul、Alternative R&B、Contemporary R&B、PB R&B、Quiet Storm、New Jack Swing、Trap Soul
-- **🆕 iPad 适配** — 横屏侧边播放、双列网格唱片架、居中输入表单
+- **🆕 iPad 适配** — 创作页黑胶品牌双栏、统计页图表并排、播放页侧边唱片，全视图适配
 - **🆕 添加到资料库** — 一键将推荐歌曲添加至 Apple Music 资料库
+- **🆕 高质量 TTS** — 智能选择中文增强语音，自然语调朗读电台独白
 
 ---
 
@@ -36,8 +37,9 @@
 - **🆕 Share Card** — Composite album art + lyrics into 1:1 image, share via Instagram / WeChat / system sheet
 - **🆕 MusicKit Integration** — Apple Music catalog search, album art display, 30s preview playback
 - **🆕 8 R&B Style Tags** — 90's Slow Jam to Trap Soul, spanning classic to contemporary R&B
-- **🆕 iPad Layout** — Side-by-side playback, 2-column grid shelf, centered input form
+- **🆕 iPad Layout** — Dual-panel inspiration with vinyl branding, side-by-side stats charts, all 7 views adapted
 - **🆕 Add to Library** — One-tap add recommended songs to Apple Music library
+- **🆕 Premium TTS** — Auto-selects enhanced Chinese voice for natural-sounding DJ radio
 
 ---
 

@@ -113,6 +113,7 @@ struct HistoryView: View {
     private var recordList: some View {
         if viewModel.filteredRecords.isEmpty {
             VStack(spacing: 16) {
+                Spacer()
                 Image(systemName: viewModel.hasActiveFilters
                       ? "magnifyingglass" : "square.stack")
                     .font(.system(size: 60))
@@ -123,8 +124,9 @@ struct HistoryView: View {
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal)
+                Spacer()
             }
-            .frame(maxHeight: .infinity)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         } else if horizontalSizeClass == .regular {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 12) {
@@ -148,6 +150,7 @@ struct HistoryView: View {
                 .padding(.horizontal, 24)
                 .padding(.vertical, 8)
             }
+            .scrollContentBackground(.hidden)
         } else {
             List {
                 ForEach(viewModel.filteredRecords) { record in
@@ -224,6 +227,7 @@ struct PastPlaybackView: View {
                 ScrollView {
                     pastContent
                 }
+                .scrollContentBackground(.hidden)
             }
             .navigationTitle(record.albumTitle)
             .navigationBarTitleDisplayMode(.inline)
@@ -241,6 +245,7 @@ struct PastPlaybackView: View {
                     pastContent
                 }
             }
+            .scrollContentBackground(.hidden)
             .navigationTitle(record.albumTitle)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar { shareToolbarItem }

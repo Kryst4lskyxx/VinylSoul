@@ -24,6 +24,7 @@ struct PlaybackView: View {
                             ScrollView {
                                 rightContent(result: result)
                             }
+                            .scrollContentBackground(.hidden)
                         }
                     } else {
                         ScrollView {
@@ -33,6 +34,7 @@ struct PlaybackView: View {
                                 rightContent(result: result)
                             }
                         }
+                        .scrollContentBackground(.hidden)
                     }
                 }
                 .sheet(isPresented: $showShareSheet) {
@@ -152,6 +154,7 @@ struct PlaybackView: View {
 
     private var emptyState: some View {
         VStack(spacing: 16) {
+            Spacer()
             Image(systemName: "music.note.list")
                 .font(.system(size: 60))
                 .foregroundStyle(.secondary)
@@ -160,6 +163,8 @@ struct PlaybackView: View {
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
+            Spacer()
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }

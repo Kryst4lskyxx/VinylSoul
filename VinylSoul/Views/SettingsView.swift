@@ -2,6 +2,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @Environment(AppStore.self) private var appStore
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
     @State private var apiKeyInput: String = ""
     @State private var showSaved = false
     @Environment(\.dismiss) private var dismiss
